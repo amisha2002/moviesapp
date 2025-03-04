@@ -20,6 +20,8 @@ ios/Podfile.lock
 ios/Gemfile.lock
 ios/build
 ios/.xcode.env.local
+ios/GoogleService-Info.plist
+android/app/google-services.json
 __tests__
 *.hprof
 # Compiled Python bytecode
