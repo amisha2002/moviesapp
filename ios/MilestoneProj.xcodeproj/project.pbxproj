@@ -16,6 +16,8 @@
 		C858BFE08AE0BCE167680483 /* Pods_MilestoneProj.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E01D1D43DC831A8389BEBF6 /* Pods_MilestoneProj.framework */; };
 		D863BA9A2D76B25700A54369 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D863BA992D76B25700A54369 /* GoogleService-Info.plist */; };
 		EB73133C8B32D2974F34D678 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 8F8065427DC4015FD9EE1686 /* PrivacyInfo.xcprivacy */; };
+		0E11F719A8DF46B3BA612C54 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BBD8B423AE164501B1C47E59 /* OpenSans-Bold.ttf */; };
+		88F58C706BCF4C978DAD7B30 /* Font.tsx in Resources */ = {isa = PBXBuildFile; fileRef = 505EC925F2C84335A4DB5D77 /* Font.tsx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		D863BA992D76B25700A54369 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-MilestoneProj/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		BBD8B423AE164501B1C47E59 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; name = "OpenSans-Bold.ttf"; path = "../src/assets/fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		505EC925F2C84335A4DB5D77 /* Font.tsx */ = {isa = PBXFileReference; name = "Font.tsx"; path = "../src/assets/fonts/Font.tsx"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				D65327D7A22EEC0BE12398D9 /* Pods */,
 				D7E4C46ADA2E9064B798F356 /* ExpoModulesProviders */,
+				EC7DAE67701D41FD992A3AF1 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -136,6 +141,16 @@
 			);
 			name = ExpoModulesProviders;
 			sourceTree = "<group>";
+		};
+		EC7DAE67701D41FD992A3AF1 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				BBD8B423AE164501B1C47E59 /* OpenSans-Bold.ttf */,
+				505EC925F2C84335A4DB5D77 /* Font.tsx */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -204,6 +219,8 @@
 				D863BA9A2D76B25700A54369 /* GoogleService-Info.plist in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
 				EB73133C8B32D2974F34D678 /* PrivacyInfo.xcprivacy in Resources */,
+				0E11F719A8DF46B3BA612C54 /* OpenSans-Bold.ttf in Resources */,
+				88F58C706BCF4C978DAD7B30 /* Font.tsx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
