@@ -40,9 +40,9 @@ const GlobalStyles = StyleSheet.create({
         borderTopRightRadius: 8,
         borderBottomLeftRadius: 8,
         borderBottomRightRadius: 8,
-        borderColor: Colors.textFieldBorderColor,
-       padding: 10,
-       marginTop:8
+        borderColor: "transparent",
+        padding: 10,
+      // marginTop:8
       },
       errorMessage: {
         color: Colors.errorMsgColor,

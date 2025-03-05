@@ -5,12 +5,14 @@ import HomeScreen from "../modules/HomeScreen";
 import DetailsScreen from "../modules/DetailsScreen";
 import LoginScreen from "../modules/Login/LoginScreen";
 import SplashScreen from "../modules/SplashScreen";
+import SettingsScreen from "../modules/HomeScreen";
 
 export type RootStackParamList = {
   Splash: undefined;
   Home: undefined;
   Login: undefined;  
   Details: { id?: number };
+  Settings: undefined
 // Passing params to Details screen
 };
 
@@ -23,6 +25,7 @@ const StackNavigation = () => {
     <Stack.Screen name="Splash" component={SplashScreen} options={{ headerShown: false }} />
       <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
       <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="Settings" component={SettingsScreen} options={{ headerShown: false }} />
       <Stack.Screen name="Details" component={DetailsScreen} options={{ 
             headerShown: true, 
             headerBackButtonDisplayMode: "minimal",

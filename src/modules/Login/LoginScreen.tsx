@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, View, Alert, Image, ImageBackground, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../navigation/StackNavigation';
@@ -6,8 +6,8 @@ import { authUseCase } from '../Login/LoginUseCase';
 import FilledButton from '../../components/FilledButton';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import GlobalStyles from '../../styles/TextStyles';
-import { GoogleSigninButton } from '@react-native-google-signin/google-signin';
-import Colors from '../../assets/colors/Colors';
+import CustomPopup from '../../components/OtpPopup';
+import PhoneNumberInput from '../../components/PhnoTextField';
 
 type LoginScreenProps = NativeStackScreenProps<RootStackParamList, 'Login'>;
 
@@ -21,30 +21,37 @@ const LoginScreen = ({ navigation }: LoginScreenProps) => {
       Alert.alert('Sign-In Failed', error.message || 'Something went wrong');
     }
   };
-
+  const handleDismissAndNavigate = () => {
+    setPopupVisible(false); // Close popup
+    navigation.navigate("Home"); // Navigate to another screen
+  };
+  const [isPopupVisible, setPopupVisible] = useState(false);
   return (
     <SafeAreaProvider>
     {/* <ImageBackground
     style={styles.imgBkg}
     source={require('../../assets/imgs/loginbg.png')}>  */}
      <View style={styles.container}>
-     
+   
     <Image
       source={require('../../assets/imgs/splash-img.png')}
       style={{ width: 150, height: 150, marginTop: 120, }}/>
+       
     <Text style={GlobalStyles.titleHeading}>Login</Text>
     <Text style={ GlobalStyles.subtitleHeading}>Sign in using Phone number</Text>
     </View>
-    <TextInput placeholder='Enter phone number' style={GlobalStyles.inputTextField}></TextInput>
+    <PhoneNumberInput onVerify={ () => 
+      setPopupVisible(true)} />
     <View style={styles.container}>
       <Text style={ GlobalStyles.subtitleHeading}>Or</Text>
       <Text style={ GlobalStyles.subtitleHeading}> Sign in using</Text>
       </View>
       <TouchableOpacity style={styles.touchable}>
-        <Image
+        {/* <Image
           source={require('../../assets/imgs/apple.png')}
-          style={styles.image} />
+          style={styles.image} /> */}
       </TouchableOpacity>
+      <CustomPopup isVisible={isPopupVisible} onClose={ handleDismissAndNavigate} />
       <FilledButton title="Google Sign-In" onPress={handleGoogleSignIn} backgroundColor='#6B6AAF'/>
       <FilledButton title="Facebook Sign-In" onPress={handleGoogleSignIn} backgroundColor='#6B6AAF'/>
       <FilledButton title="Apple Sign-In" onPress={handleGoogleSignIn} backgroundColor='#6B6AAF'/>
@@ -59,7 +66,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   container: {
-    alignItems: 'center'
+    alignItems: 'center',
+   
   },
   touchable: {
     alignItems: 'center',
@@ -72,6 +80,12 @@ const styles = StyleSheet.create({
     width: 45,
     height: 45,
 
+  },
+ 
+  countryCode: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: '#000',
   },
 });
 export default LoginScreen;

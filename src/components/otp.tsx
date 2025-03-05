@@ -3,7 +3,7 @@ import { TextInput, View, StyleSheet } from "react-native";
 interface OTPInputProps {
   codes: string[];
   refs: RefObject<TextInput>[];
-  errorMessages: string[] | undefined;
+  errorMessages: string | undefined;
   onChangeCode: (text: string, index: number) => void;
   config: OTPInputConfig;
 }
