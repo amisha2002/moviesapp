@@ -1,7 +1,7 @@
 import React, { RefObject, useRef, useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet, TextInput } from "react-native";
 import Modal from "react-native-modal";
-import { OTPInput } from "./otp";
+import { OTPInput } from "./OTPView";
 import Colors from "../assets/colors/Colors";
 
 interface CustomPopupProps {

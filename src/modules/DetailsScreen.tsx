@@ -4,7 +4,7 @@ import { View, Text, KeyboardAvoidingView,
         StyleSheet } from "react-native";
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from "../navigation/StackNavigation";
-import { OTPInput } from "../components/otp";
+import { OTPInput } from "../components/OTPView";
 import GlobalStyles from "../styles/TextStyles";
 import FilledButton from "../components/FilledButton";
 

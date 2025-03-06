@@ -8,10 +8,13 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import GlobalStyles from '../../styles/TextStyles';
 import CustomPopup from '../../components/OtpPopup';
 import PhoneNumberInput from '../../components/PhnoTextField';
+import { useTheme } from '../../assets/ThemeContext';
+import ThemeSwitcher from '../../components/ThemeSwitcher';
 
 type LoginScreenProps = NativeStackScreenProps<RootStackParamList, 'Login'>;
 
 const LoginScreen = ({ navigation }: LoginScreenProps) => {
+  const { colors } = useTheme();
   const handleGoogleSignIn = async () => {
     try {
       await authUseCase.signInWithGoogle();
@@ -27,7 +30,7 @@ const LoginScreen = ({ navigation }: LoginScreenProps) => {
   };
   const [isPopupVisible, setPopupVisible] = useState(false);
   return (
-    <SafeAreaProvider>
+    <SafeAreaProvider style={{backgroundColor: colors.background}}>
     {/* <ImageBackground
     style={styles.imgBkg}
     source={require('../../assets/imgs/loginbg.png')}>  */}
@@ -46,11 +49,13 @@ const LoginScreen = ({ navigation }: LoginScreenProps) => {
       <Text style={ GlobalStyles.subtitleHeading}>Or</Text>
       <Text style={ GlobalStyles.subtitleHeading}> Sign in using</Text>
       </View>
-      <TouchableOpacity style={styles.touchable}>
+      {/* <ThemeSwitcher /> */}
+      {/* <TouchableOpacity style={styles.touchable}> */}
+        
         {/* <Image
           source={require('../../assets/imgs/apple.png')}
           style={styles.image} /> */}
-      </TouchableOpacity>
+      {/* </TouchableOpacity> */}
       <CustomPopup isVisible={isPopupVisible} onClose={ handleDismissAndNavigate} />
       <FilledButton title="Google Sign-In" onPress={handleGoogleSignIn} backgroundColor='#6B6AAF'/>
       <FilledButton title="Facebook Sign-In" onPress={handleGoogleSignIn} backgroundColor='#6B6AAF'/>

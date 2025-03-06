@@ -1,10 +1,11 @@
 
 import React, { useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar, StyleSheet, Text, View } from 'react-native';
 import StackNavigation from './src/navigation/StackNavigation';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import firebase from '@react-native-firebase/app';
 import { Platform } from 'react-native';
+import { darkTheme, ThemeProvider, useTheme } from './src/assets/ThemeContext';
 export default function App() {
   useEffect(() => {
     const androidCredentials = {
@@ -42,8 +43,12 @@ export default function App() {
       webClientId: '231887638888-ac4d8hagq5sna7qfogggre8mih0l1btc.apps.googleusercontent.com', // Get this from Firebase console
     });
 });
+const { colors } = useTheme();
   return (
+    <ThemeProvider>
+        <StatusBar barStyle={colors === darkTheme ? 'light-content' : 'dark-content'} />
     <StackNavigation></StackNavigation>
+    </ThemeProvider>
   );
 }
 
